@@ -1,0 +1,299 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.core.widget.NestedScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <LinearLayout style="@style/ColumnaSeccion">
+
+        <!-- ========== 1. Casillas de verificación ========== -->
+        <com.gmail.juliocesar64914.interfazconviews.componentes.TarjetaDemo
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:nombre="Casilla de verificación"
+            app:descripcion="Permite marcar o desmarcar opciones independientes. La casilla principal queda indeterminada (con una raya) cuando solo algunas están marcadas.">
+
+            <com.google.android.material.checkbox.MaterialCheckBox
+                android:id="@+id/casillaTodo"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Seleccionar todo"
+                android:textStyle="bold" />
+
+            <com.google.android.material.checkbox.MaterialCheckBox
+                android:id="@+id/casillaLeche"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="32dp"
+                android:checked="true"
+                android:text="Leche" />
+
+            <com.google.android.material.checkbox.MaterialCheckBox
+                android:id="@+id/casillaPan"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="32dp"
+                android:text="Pan" />
+
+            <com.google.android.material.checkbox.MaterialCheckBox
+                android:id="@+id/casillaHuevos"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="32dp"
+                android:text="Huevos" />
+
+            <TextView
+                android:id="@+id/respuestaCasillas"
+                style="@style/TextoRespuesta"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
+        </com.gmail.juliocesar64914.interfazconviews.componentes.TarjetaDemo>
+
+        <!-- ========== 2. Botones de opción ========== -->
+        <com.gmail.juliocesar64914.interfazconviews.componentes.TarjetaDemo
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:nombre="Botones de opción (radio)"
+            app:descripcion="Presentan opciones mutuamente excluyentes: al elegir una, las demás se desmarcan. Se usan cuando todas las alternativas deben estar a la vista.">
+
+            <RadioGroup
+                android:id="@+id/grupoEnvio"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:checkedButton="@id/envioEstandar">
+
+                <com.google.android.material.radiobutton.MaterialRadioButton
+                    android:id="@+id/envioEstandar"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Estándar (5 a 7 días)" />
+
+                <com.google.android.material.radiobutton.MaterialRadioButton
+                    android:id="@+id/envioExpres"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Exprés (2 a 3 días)" />
+
+                <com.google.android.material.radiobutton.MaterialRadioButton
+                    android:id="@+id/envioTienda"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Recoger en tienda" />
+            </RadioGroup>
+
+            <TextView
+                android:id="@+id/respuestaEnvio"
+                style="@style/TextoRespuesta"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Tipo de envío: Estándar (5 a 7 días)" />
+        </com.gmail.juliocesar64914.interfazconviews.componentes.TarjetaDemo>
+
+        <!-- ========== 3. Interruptores ========== -->
+        <com.gmail.juliocesar64914.interfazconviews.componentes.TarjetaDemo
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:nombre="Interruptor (switch)"
+            app:descripcion="Activa o desactiva una configuración de forma inmediata, sin necesidad de pulsar un botón de guardar. Es ideal para ajustes de encendido y apagado.">
+
+            <com.google.android.material.materialswitch.MaterialSwitch
+                android:id="@+id/interruptorNotificaciones"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:checked="true"
+                android:text="Notificaciones"
+                android:textAppearance="?attr/textAppearanceBodyLarge"
+                app:thumbIcon="@drawable/sel_icono_switch" />
+
+            <com.google.android.material.divider.MaterialDivider
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
+
+            <com.google.android.material.materialswitch.MaterialSwitch
+                android:id="@+id/interruptorAvion"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Modo avión"
+                android:textAppearance="?attr/textAppearanceBodyLarge"
+                app:thumbIcon="@drawable/sel_icono_switch" />
+
+            <TextView
+                android:id="@+id/respuestaInterruptores"
+                style="@style/TextoRespuesta"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
+        </com.gmail.juliocesar64914.interfazconviews.componentes.TarjetaDemo>
+
+        <!-- ========== 4. Deslizador de valor único (conectado con la Sección 5) ========== -->
+        <com.gmail.juliocesar64914.interfazconviews.componentes.TarjetaDemo
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:nombre="Deslizador de valor único"
+            app:descripcion="Elige un valor dentro de un rango arrastrando el control. Este ajusta el tamaño de los textos de la Sección 5, así que tu elección se comparte entre secciones.">
+
+            <com.google.android.material.slider.Slider
+                android:id="@+id/deslizadorTamano"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:contentDescription="Tamaño de texto"
+                android:stepSize="10"
+                android:value="100"
+                android:valueFrom="80"
+                android:valueTo="160" />
+
+            <TextView
+                android:id="@+id/textoTamano"
+                style="@style/TextoRespuesta"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
+        </com.gmail.juliocesar64914.interfazconviews.componentes.TarjetaDemo>
+
+        <!-- ========== 5. Deslizador de rango ========== -->
+        <com.gmail.juliocesar64914.interfazconviews.componentes.TarjetaDemo
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:nombre="Deslizador de rango"
+            app:descripcion="Tiene dos controles para definir un mínimo y un máximo a la vez. Es común en filtros de precio, edad o distancia.">
+
+            <com.google.android.material.slider.RangeSlider
+                android:id="@+id/deslizadorRango"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:contentDescription="Rango de precio"
+                android:stepSize="100"
+                android:valueFrom="0"
+                android:valueTo="2000" />
+
+            <TextView
+                android:id="@+id/respuestaRango"
+                style="@style/TextoRespuesta"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
+        </com.gmail.juliocesar64914.interfazconviews.componentes.TarjetaDemo>
+
+        <!-- ========== 6. Lista desplegable ========== -->
+        <com.gmail.juliocesar64914.interfazconviews.componentes.TarjetaDemo
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:nombre="Lista desplegable de selección"
+            app:descripcion="Muestra la opción elegida y, al tocarla, despliega todas las alternativas. Ahorra espacio cuando hay muchas opciones posibles.">
+
+            <com.google.android.material.textfield.TextInputLayout
+                style="@style/Widget.Material3.TextInputLayout.OutlinedBox.ExposedDropdownMenu"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Carrera">
+
+                <!-- inputType="none" evita que se pueda escribir: solo se elige -->
+                <com.google.android.material.textfield.MaterialAutoCompleteTextView
+                    android:id="@+id/campoCarrera"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:inputType="none" />
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <TextView
+                android:id="@+id/respuestaCarrera"
+                style="@style/TextoRespuesta"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Aún no eliges una carrera." />
+        </com.gmail.juliocesar64914.interfazconviews.componentes.TarjetaDemo>
+
+        <!-- ========== 7. Selector de fecha ========== -->
+        <com.gmail.juliocesar64914.interfazconviews.componentes.TarjetaDemo
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:nombre="Selector de fecha"
+            app:descripcion="Abre un calendario para elegir un día sin escribirlo a mano, lo que evita formatos incorrectos. También permite capturar la fecha con el teclado.">
+
+            <Button
+                android:id="@+id/botonFecha"
+                style="@style/Widget.Material3.Button.OutlinedButton.Icon"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Elegir fecha"
+                app:icon="@drawable/ic_event" />
+
+            <TextView
+                android:id="@+id/respuestaFecha"
+                style="@style/TextoRespuesta"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Sin fecha seleccionada." />
+        </com.gmail.juliocesar64914.interfazconviews.componentes.TarjetaDemo>
+
+        <!-- ========== 8. Selector de hora ========== -->
+        <com.gmail.juliocesar64914.interfazconviews.componentes.TarjetaDemo
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:nombre="Selector de hora"
+            app:descripcion="Muestra un reloj para elegir hora y minutos de forma visual. Es útil para alarmas, citas o recordatorios.">
+
+            <Button
+                android:id="@+id/botonHora"
+                style="@style/Widget.Material3.Button.OutlinedButton.Icon"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Elegir hora"
+                app:icon="@drawable/ic_schedule" />
+
+            <TextView
+                android:id="@+id/respuestaHora"
+                style="@style/TextoRespuesta"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Sin hora seleccionada." />
+        </com.gmail.juliocesar64914.interfazconviews.componentes.TarjetaDemo>
+
+        <!-- ========== 9. Chips de filtro ========== -->
+        <com.gmail.juliocesar64914.interfazconviews.componentes.TarjetaDemo
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:nombre="Chips de filtro"
+            app:descripcion="Etiquetas compactas que se activan o desactivan para filtrar contenido. Se pueden combinar varias a la vez.">
+
+            <com.google.android.material.chip.ChipGroup
+                android:id="@+id/grupoChips"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:singleSelection="false">
+
+                <com.google.android.material.chip.Chip
+                    android:id="@+id/chipFrutas"
+                    style="@style/Widget.Material3.Chip.Filter"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:checked="true"
+                    android:text="Frutas" />
+
+                <com.google.android.material.chip.Chip
+                    android:id="@+id/chipVerduras"
+                    style="@style/Widget.Material3.Chip.Filter"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Verduras" />
+
+                <com.google.android.material.chip.Chip
+                    android:id="@+id/chipLacteos"
+                    style="@style/Widget.Material3.Chip.Filter"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Lácteos" />
+
+                <com.google.android.material.chip.Chip
+                    android:id="@+id/chipCereales"
+                    style="@style/Widget.Material3.Chip.Filter"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Cereales" />
+            </com.google.android.material.chip.ChipGroup>
+
+            <TextView
+                android:id="@+id/respuestaChips"
+                style="@style/TextoRespuesta"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
+        </com.gmail.juliocesar64914.interfazconviews.componentes.TarjetaDemo>
+    </LinearLayout>
+</androidx.core.widget.NestedScrollView>
