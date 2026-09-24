@@ -14,12 +14,12 @@
         android:name="com.gmail.juliocesar64914.interfazconviews.pantallas.Seccion1TextoFragment"
         android:label="Entrada de texto" />
 
-    <!-- Estas secciones apuntan a una pantalla temporal; se reemplazan en los siguientes pasos -->
     <fragment
         android:id="@+id/seccion2Fragment"
-        android:name="com.gmail.juliocesar64914.interfazconviews.pantallas.PendienteFragment"
+        android:name="com.gmail.juliocesar64914.interfazconviews.pantallas.Seccion2BotonesFragment"
         android:label="Botones y acciones" />
 
+    <!-- Estas secciones apuntan a una pantalla temporal; se reemplazan en los siguientes pasos -->
     <fragment
         android:id="@+id/seccion3Fragment"
         android:name="com.gmail.juliocesar64914.interfazconviews.pantallas.PendienteFragment"

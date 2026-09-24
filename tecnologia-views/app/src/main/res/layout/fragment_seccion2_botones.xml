@@ -1,0 +1,415 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.core.widget.NestedScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <LinearLayout style="@style/ColumnaSeccion">
+
+        <!-- ========== 1. Relleno, contorno y texto ========== -->
+        <com.gmail.juliocesar64914.interfazconviews.componentes.TarjetaDemo
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:nombre="Botón relleno, con contorno y de texto"
+            app:descripcion="Indican distinta importancia: el relleno es la acción principal, el de contorno una secundaria y el de texto la de menor énfasis. El tonal y el elevado son variantes intermedias.">
+
+            <!-- Flow (de ConstraintLayout) acomoda los botones y los pasa a otra línea si no caben -->
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <Button
+                    android:id="@+id/botonRelleno"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Relleno" />
+
+                <Button
+                    android:id="@+id/botonContorno"
+                    style="@style/Widget.Material3.Button.OutlinedButton"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Con contorno" />
+
+                <Button
+                    android:id="@+id/botonTexto"
+                    style="@style/Widget.Material3.Button.TextButton"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="De texto" />
+
+                <Button
+                    android:id="@+id/botonTonal"
+                    style="@style/Widget.Material3.Button.TonalButton"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Tonal" />
+
+                <Button
+                    android:id="@+id/botonElevado"
+                    style="@style/Widget.Material3.Button.ElevatedButton"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Elevado" />
+
+                <androidx.constraintlayout.helper.widget.Flow
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    app:constraint_referenced_ids="botonRelleno,botonContorno,botonTexto,botonTonal,botonElevado"
+                    app:flow_horizontalBias="0"
+                    app:flow_horizontalGap="8dp"
+                    app:flow_horizontalStyle="packed"
+                    app:flow_wrapMode="chain"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <TextView
+                android:id="@+id/respuestaBasicos"
+                style="@style/TextoRespuesta"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Último pulsado: Ninguno · Total: 0" />
+        </com.gmail.juliocesar64914.interfazconviews.componentes.TarjetaDemo>
+
+        <!-- ========== 2. Botones con ícono ========== -->
+        <com.gmail.juliocesar64914.interfazconviews.componentes.TarjetaDemo
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:nombre="Botones con ícono"
+            app:descripcion="Los de solo ícono ahorran espacio en acciones conocidas como compartir o borrar. Con ícono y texto, la acción es más clara para el usuario.">
+
+            <TextView
+                style="@style/TextoEtiqueta"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Solo ícono" />
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <Button
+                    android:id="@+id/botonCompartir"
+                    style="@style/Widget.Material3.Button.IconButton"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:contentDescription="Compartir"
+                    app:icon="@drawable/ic_share" />
+
+                <Button
+                    android:id="@+id/botonEditar"
+                    style="@style/Widget.Material3.Button.IconButton.Filled"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="8dp"
+                    android:contentDescription="Editar"
+                    app:icon="@drawable/ic_edit" />
+
+                <Button
+                    android:id="@+id/botonEliminar"
+                    style="@style/Widget.Material3.Button.IconButton.Outlined"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="8dp"
+                    android:contentDescription="Eliminar"
+                    app:icon="@drawable/ic_delete" />
+            </LinearLayout>
+
+            <TextView
+                style="@style/TextoEtiqueta"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Ícono y texto" />
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <Button
+                    android:id="@+id/botonEnviar"
+                    style="@style/Widget.Material3.Button.Icon"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Enviar"
+                    app:icon="@drawable/ic_send" />
+
+                <Button
+                    android:id="@+id/botonDescargar"
+                    style="@style/Widget.Material3.Button.OutlinedButton.Icon"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="8dp"
+                    android:text="Descargar"
+                    app:icon="@drawable/ic_download" />
+            </LinearLayout>
+
+            <TextView
+                android:id="@+id/respuestaIconos"
+                style="@style/TextoRespuesta"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Pulsa un botón." />
+        </com.gmail.juliocesar64914.interfazconviews.componentes.TarjetaDemo>
+
+        <!-- ========== 3. Botones flotantes ========== -->
+        <com.gmail.juliocesar64914.interfazconviews.componentes.TarjetaDemo
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:nombre="Botón de acción flotante (FAB)"
+            app:descripcion="Representa la acción más importante de una pantalla y flota sobre el contenido. La versión extendida añade texto y puede contraerse a solo ícono.">
+
+            <!-- Recuadro que simula una pantalla para colocar los FAB en las esquinas -->
+            <FrameLayout
+                android:layout_width="match_parent"
+                android:layout_height="190dp"
+                android:background="@drawable/fondo_area"
+                android:padding="16dp">
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:id="@+id/textoTareas"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Tareas creadas: 0"
+                        android:textAppearance="?attr/textAppearanceBodyLarge" />
+
+                    <TextView
+                        android:id="@+id/textoNotas"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Notas creadas: 0"
+                        android:textAppearance="?attr/textAppearanceBodyLarge" />
+
+                    <Button
+                        android:id="@+id/botonContraer"
+                        style="@style/Widget.Material3.Button.TextButton"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Contraer FAB extendido" />
+                </LinearLayout>
+
+                <com.google.android.material.floatingactionbutton.ExtendedFloatingActionButton
+                    android:id="@+id/fabExtendido"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="bottom|start"
+                    android:text="Nueva nota"
+                    app:icon="@drawable/ic_edit" />
+
+                <com.google.android.material.floatingactionbutton.FloatingActionButton
+                    android:id="@+id/fabNormal"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="bottom|end"
+                    android:contentDescription="Nueva tarea"
+                    app:srcCompat="@drawable/ic_add" />
+            </FrameLayout>
+        </com.gmail.juliocesar64914.interfazconviews.componentes.TarjetaDemo>
+
+        <!-- ========== 4. Botones de alternancia ========== -->
+        <com.gmail.juliocesar64914.interfazconviews.componentes.TarjetaDemo
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:nombre="Botón de alternancia (toggle)"
+            app:descripcion="Cambia entre dos estados, activado y desactivado, con cada pulsación. Se usa para marcar favoritos, guardar elementos o activar una opción.">
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <com.google.android.material.button.MaterialButton
+                    android:id="@+id/botonFavorito"
+                    style="@style/Widget.Material3.Button.IconButton"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:checkable="true"
+                    android:contentDescription="Favorito"
+                    app:icon="@drawable/ic_favorite_border" />
+
+                <com.google.android.material.button.MaterialButton
+                    android:id="@+id/botonGuardar"
+                    style="@style/Widget.Material3.Button.IconButton"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="8dp"
+                    android:checkable="true"
+                    android:contentDescription="Guardar"
+                    app:icon="@drawable/ic_bookmark_border" />
+            </LinearLayout>
+
+            <TextView
+                android:id="@+id/respuestaAlternancia"
+                style="@style/TextoRespuesta"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Favorito: no · Guardado: no" />
+        </com.gmail.juliocesar64914.interfazconviews.componentes.TarjetaDemo>
+
+        <!-- ========== 5. Selector segmentado ========== -->
+        <com.gmail.juliocesar64914.interfazconviews.componentes.TarjetaDemo
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:nombre="Selector segmentado"
+            app:descripcion="Agrupa opciones relacionadas en una sola barra. Puede permitir elegir solo una opción, como el modo de vista, o varias a la vez, como el formato de texto.">
+
+            <TextView
+                style="@style/TextoEtiqueta"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Una sola opción" />
+
+            <com.google.android.material.button.MaterialButtonToggleGroup
+                android:id="@+id/grupoVista"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:checkedButton="@id/opcionLista"
+                app:selectionRequired="true"
+                app:singleSelection="true">
+
+                <Button
+                    android:id="@+id/opcionLista"
+                    style="@style/Widget.Material3.Button.OutlinedButton"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="Lista" />
+
+                <Button
+                    android:id="@+id/opcionCuadricula"
+                    style="@style/Widget.Material3.Button.OutlinedButton"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="Cuadrícula" />
+
+                <Button
+                    android:id="@+id/opcionMosaico"
+                    style="@style/Widget.Material3.Button.OutlinedButton"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="Mosaico" />
+            </com.google.android.material.button.MaterialButtonToggleGroup>
+
+            <TextView
+                android:id="@+id/respuestaVista"
+                style="@style/TextoRespuesta"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Vista seleccionada: Lista" />
+
+            <TextView
+                style="@style/TextoEtiqueta"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:text="Varias opciones" />
+
+            <com.google.android.material.button.MaterialButtonToggleGroup
+                android:id="@+id/grupoFormato"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <Button
+                    android:id="@+id/opcionNegrita"
+                    style="@style/Widget.Material3.Button.OutlinedButton.Icon"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:contentDescription="Negrita"
+                    app:icon="@drawable/ic_format_bold"
+                    app:iconGravity="textStart"
+                    app:iconPadding="0dp" />
+
+                <Button
+                    android:id="@+id/opcionCursiva"
+                    style="@style/Widget.Material3.Button.OutlinedButton.Icon"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:contentDescription="Cursiva"
+                    app:icon="@drawable/ic_format_italic"
+                    app:iconGravity="textStart"
+                    app:iconPadding="0dp" />
+
+                <Button
+                    android:id="@+id/opcionSubrayado"
+                    style="@style/Widget.Material3.Button.OutlinedButton.Icon"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:contentDescription="Subrayado"
+                    app:icon="@drawable/ic_format_underlined"
+                    app:iconGravity="textStart"
+                    app:iconPadding="0dp" />
+            </com.google.android.material.button.MaterialButtonToggleGroup>
+
+            <TextView
+                android:id="@+id/textoFormato"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Este texto cambia con el formato elegido."
+                android:textAppearance="?attr/textAppearanceBodyLarge" />
+        </com.gmail.juliocesar64914.interfazconviews.componentes.TarjetaDemo>
+
+        <!-- ========== 6. Botón deshabilitado ========== -->
+        <com.gmail.juliocesar64914.interfazconviews.componentes.TarjetaDemo
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:nombre="Botón deshabilitado"
+            app:descripcion="Se muestra atenuado y no responde mientras falte un requisito. Aquí el botón se habilita solo cuando aceptas los términos.">
+
+            <com.google.android.material.checkbox.MaterialCheckBox
+                android:id="@+id/casillaTerminos"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Acepto los términos y condiciones" />
+
+            <Button
+                android:id="@+id/botonCrearCuenta"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:enabled="false"
+                android:text="Crear cuenta" />
+
+            <TextView
+                android:id="@+id/respuestaDeshabilitado"
+                style="@style/TextoRespuesta"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="El botón está deshabilitado: marca la casilla." />
+        </com.gmail.juliocesar64914.interfazconviews.componentes.TarjetaDemo>
+
+        <!-- ========== 7. Botón en estado de carga ========== -->
+        <com.gmail.juliocesar64914.interfazconviews.componentes.TarjetaDemo
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:nombre="Botón en estado de carga"
+            app:descripcion="Mientras una operación está en curso, el botón muestra un indicador de progreso y se bloquea para evitar que se pulse dos veces.">
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/botonEnviarFormulario"
+                style="@style/Widget.Material3.Button.Icon"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Enviar formulario"
+                app:icon="@drawable/ic_send" />
+
+            <TextView
+                android:id="@+id/respuestaCarga"
+                style="@style/TextoRespuesta"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Pulsa el botón para simular un envío." />
+        </com.gmail.juliocesar64914.interfazconviews.componentes.TarjetaDemo>
+    </LinearLayout>
+</androidx.core.widget.NestedScrollView>
