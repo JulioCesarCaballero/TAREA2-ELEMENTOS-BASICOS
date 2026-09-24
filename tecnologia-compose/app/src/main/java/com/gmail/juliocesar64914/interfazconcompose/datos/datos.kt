@@ -6,6 +6,8 @@ import androidx.compose.runtime.mutableStateListOf
 import androidx.compose.runtime.setValue
 import androidx.lifecycle.ViewModel
 
+const val CATEGORIA_USUARIO = "Del usuario"
+
 data class ElementoLista(
     val id: Long,
     val titulo: String,
@@ -32,7 +34,7 @@ class CatalogoViewModel : ViewModel() {
         if (titulo.isBlank()) return
         elementos.add(
             0,
-            ElementoLista(siguienteId++, titulo.trim(), "Agregado desde Entrada de texto", "Del usuario")
+            ElementoLista(siguienteId++, titulo.trim(), "Agregado desde Entrada de texto", CATEGORIA_USUARIO)
         )
     }
 
@@ -40,8 +42,11 @@ class CatalogoViewModel : ViewModel() {
         elementos.remove(elemento)
     }
 
+    /** Restaura las frutas y verduras originales, conservando lo que agregó el usuario. */
     fun reiniciarLista() {
+        val delUsuario = elementos.filter { it.categoria == CATEGORIA_USUARIO }
         elementos.clear()
+        elementos.addAll(delUsuario)
         FRUTAS.forEach {
             elementos.add(ElementoLista(siguienteId++, it, "Fruta de temporada", "Frutas"))
         }
