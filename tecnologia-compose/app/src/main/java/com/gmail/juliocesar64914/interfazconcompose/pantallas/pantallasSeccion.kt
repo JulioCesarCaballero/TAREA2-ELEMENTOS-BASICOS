@@ -21,8 +21,8 @@ fun PantallaSeccion(seccion: Seccion, viewModel: CatalogoViewModel) {
         Seccion.BOTONES -> Seccion2Botones()
         Seccion.SELECCION -> Seccion3Seleccion(viewModel)
         Seccion.LISTAS -> Seccion4Listas(viewModel)
-        Seccion.INFORMACION -> EnConstruccion(seccion)
-        Seccion.CONTENEDORES -> EnConstruccion(seccion)
+        Seccion.INFORMACION -> Seccion5Informacion(viewModel)
+        Seccion.CONTENEDORES -> Seccion6Contenedores()
     }
 }
 
