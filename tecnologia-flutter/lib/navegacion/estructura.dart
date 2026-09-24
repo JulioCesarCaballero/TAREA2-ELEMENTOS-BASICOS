@@ -4,6 +4,7 @@ import '../datos/catalogo_estado.dart';
 import '../pantallas/inicio.dart';
 import '../pantallas/pendiente.dart';
 import '../pantallas/seccion1_texto.dart';
+import '../pantallas/seccion2_botones.dart';
 import 'seccion.dart';
 
 /// Estructura principal: barra superior, pestañas (Inicio + 6 secciones) y contenido.
@@ -37,6 +38,7 @@ class _EstructuraState extends State<Estructura> with SingleTickerProviderStateM
     return switch (_actual) {
       null => PantallaInicio(onAbrirSeccion: _ir),
       Seccion.texto => const Seccion1Texto(),
+      Seccion.botones => const Seccion2Botones(),
       final Seccion s => PantallaPendiente(seccion: s),
     };
   }
