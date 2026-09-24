@@ -41,7 +41,7 @@ import androidx.compose.material3.Icon
 import androidx.compose.material3.ListItem
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.OutlinedButton
-import androidx.compose.material3.PrimaryTabRow
+import androidx.compose.material3.SecondaryTabRow
 import androidx.compose.material3.Surface
 import androidx.compose.material3.SwipeToDismissBox
 import androidx.compose.material3.SwipeToDismissBoxValue
@@ -95,13 +95,12 @@ fun Seccion4Listas(viewModel: CatalogoViewModel) {
                     "a la izquierda o a la derecha para cambiar de página.",
             modifier = Modifier.padding(horizontal = 16.dp, vertical = 8.dp)
         )
-        PrimaryTabRow(selectedTabIndex = pagerState.currentPage) {
+        SecondaryTabRow(selectedTabIndex = pagerState.currentPage) {
             PESTANAS.forEachIndexed { indice, pestana ->
                 Tab(
                     selected = pagerState.currentPage == indice,
                     onClick = { scope.launch { pagerState.animateScrollToPage(indice) } },
-                    text = { Text(pestana.titulo) },
-                    icon = { Icon(pestana.icono, contentDescription = null) }
+                    text = { Text(pestana.titulo) }
                 )
             }
         }

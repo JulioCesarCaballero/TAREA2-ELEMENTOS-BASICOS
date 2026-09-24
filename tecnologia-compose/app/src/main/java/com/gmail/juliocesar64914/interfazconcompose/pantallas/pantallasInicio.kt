@@ -32,8 +32,8 @@ fun PantallaInicio(
             Column(verticalArrangement = Arrangement.spacedBy(4.dp)) {
                 Text("Catálogo de elementos de interfaz", style = MaterialTheme.typography.headlineSmall)
                 Text(
-                    "Explora cada categoría. Cada elemento incluye su nombre, para qué sirve " +
-                            "y una demostración con la que puedes interactuar.",
+                    "Elige una categoría aquí o en las pestañas de arriba. Cada elemento " +
+                            "incluye su nombre, para qué sirve y una demostración interactiva.",
                     style = MaterialTheme.typography.bodyMedium,
                     color = MaterialTheme.colorScheme.onSurfaceVariant
                 )

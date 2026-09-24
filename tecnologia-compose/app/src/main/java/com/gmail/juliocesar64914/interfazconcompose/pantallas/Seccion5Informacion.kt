@@ -50,6 +50,8 @@ import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.ModalBottomSheet
 import androidx.compose.material3.OutlinedButton
 import androidx.compose.material3.OutlinedCard
+import androidx.compose.material3.OutlinedTextField
+import androidx.compose.material3.Switch
 import androidx.compose.material3.SnackbarDuration
 import androidx.compose.material3.SnackbarHost
 import androidx.compose.material3.SnackbarHostState
@@ -63,6 +65,7 @@ import androidx.compose.runtime.CompositionLocalProvider
 import androidx.compose.runtime.getValue
 import androidx.compose.runtime.mutableFloatStateOf
 import androidx.compose.runtime.mutableIntStateOf
+import androidx.compose.runtime.mutableStateListOf
 import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.remember
 import androidx.compose.runtime.rememberCoroutineScope
@@ -79,7 +82,6 @@ import androidx.compose.ui.platform.LocalDensity
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.text.SpanStyle
 import androidx.compose.ui.text.buildAnnotatedString
-import androidx.compose.ui.text.font.FontFamily
 import androidx.compose.ui.text.font.FontStyle
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.text.style.TextDecoration
@@ -156,46 +158,78 @@ private fun AvisoEscala(viewModel: CatalogoViewModel) {
 }
 
 // ---------- 1. Estilos de texto ----------
+private val NOMBRES_ENFASIS = listOf("Negrita", "Cursiva", "Subrayado", "Tachado", "Color")
+
+@OptIn(ExperimentalLayoutApi::class)
 @Composable
 private fun EstilosDeTexto() {
+    var muestra by rememberSaveable { mutableStateOf("Hola, mundo") }
+    val enfasis = remember { mutableStateListOf(true, false, false, false, false) }
+    var expandido by rememberSaveable { mutableStateOf(false) }
+    val texto = muestra.ifBlank { "Texto de ejemplo" }
+
     DemoElemento(
         nombre = "Textos con distintos estilos",
         descripcion = "El tamaño, el grosor y el color crean jerarquía: indican qué leer " +
-                "primero. El énfasis resalta palabras clave dentro de un mismo párrafo."
+                "primero. El énfasis resalta palabras clave. Escribe un texto y cambia su énfasis."
     ) {
-        Text("Título grande", style = MaterialTheme.typography.headlineMedium)
-        Text("Subtítulo de sección", style = MaterialTheme.typography.titleLarge)
-        Text(
-            "Texto de cuerpo para párrafos largos, pensado para leerse con comodidad.",
-            style = MaterialTheme.typography.bodyLarge
+        OutlinedTextField(
+            value = muestra,
+            onValueChange = { muestra = it.take(30) },
+            label = { Text("Texto de ejemplo") },
+            singleLine = true,
+            modifier = Modifier.fillMaxWidth()
         )
-        Text("Etiqueta pequeña", style = MaterialTheme.typography.labelSmall)
+        Text("Tamaños", style = MaterialTheme.typography.labelLarge)
+        Text(texto, style = MaterialTheme.typography.headlineMedium)
+        Text(texto, style = MaterialTheme.typography.titleLarge)
+        Text(texto, style = MaterialTheme.typography.bodyLarge)
+        Text(texto, style = MaterialTheme.typography.labelSmall)
+
         HorizontalDivider(Modifier.padding(vertical = 4.dp))
+        Text("Énfasis", style = MaterialTheme.typography.labelLarge)
+        FlowRow(horizontalArrangement = Arrangement.spacedBy(8.dp)) {
+            NOMBRES_ENFASIS.forEachIndexed { i, nombre ->
+                FilterChip(
+                    selected = enfasis[i],
+                    onClick = { enfasis[i] = !enfasis[i] },
+                    label = { Text(nombre) }
+                )
+            }
+        }
+        val decoraciones = buildList {
+            if (enfasis[2]) add(TextDecoration.Underline)
+            if (enfasis[3]) add(TextDecoration.LineThrough)
+        }
         Text(
             buildAnnotatedString {
-                append("Puedes combinar ")
-                withStyle(SpanStyle(fontWeight = FontWeight.Bold)) { append("negrita") }
-                append(", ")
-                withStyle(SpanStyle(fontStyle = FontStyle.Italic)) { append("cursiva") }
-                append(", ")
-                withStyle(SpanStyle(textDecoration = TextDecoration.Underline)) { append("subrayado") }
-                append(", ")
-                withStyle(SpanStyle(textDecoration = TextDecoration.LineThrough)) { append("tachado") }
-                append(", ")
-                withStyle(SpanStyle(color = MaterialTheme.colorScheme.error)) { append("color") }
-                append(" y ")
-                withStyle(SpanStyle(fontFamily = FontFamily.Monospace)) { append("monoespaciado") }
-                append(" en un solo texto.")
+                append("Resultado: ")
+                withStyle(
+                    SpanStyle(
+                        fontWeight = if (enfasis[0]) FontWeight.Bold else FontWeight.Normal,
+                        fontStyle = if (enfasis[1]) FontStyle.Italic else FontStyle.Normal,
+                        textDecoration = TextDecoration.combine(decoraciones),
+                        color = if (enfasis[4]) MaterialTheme.colorScheme.error else MaterialTheme.colorScheme.onSurface
+                    )
+                ) { append(texto) }
             },
-            style = MaterialTheme.typography.bodyLarge
+            style = MaterialTheme.typography.titleMedium
         )
+
+        HorizontalDivider(Modifier.padding(vertical = 4.dp))
+        Text("Texto largo", style = MaterialTheme.typography.labelLarge)
         Text(
-            "Este texto es demasiado largo para caber en una sola línea, así que se corta " +
-                    "con puntos suspensivos al final.",
-            maxLines = 1,
+            "Este párrafo es demasiado largo para caber en una sola línea. Cuando está " +
+                    "contraído se corta con puntos suspensivos; al expandirlo se muestra completo " +
+                    "y ocupa todas las líneas que necesite.",
+            maxLines = if (expandido) Int.MAX_VALUE else 1,
             overflow = TextOverflow.Ellipsis,
-            style = MaterialTheme.typography.bodyMedium
+            style = MaterialTheme.typography.bodyMedium,
+            modifier = Modifier.clickable { expandido = !expandido }
         )
+        TextButton(onClick = { expandido = !expandido }) {
+            Text(if (expandido) "Ver menos" else "Ver más")
+        }
     }
 }
 
@@ -280,6 +314,7 @@ private fun MarcoImagen(contenido: @Composable () -> Unit) {
 private fun IndicadoresProgreso() {
     var progreso by remember { mutableFloatStateOf(0.3f) }
     var descargando by remember { mutableStateOf(false) }
+    var cargaActiva by rememberSaveable { mutableStateOf(true) }
     val animado by animateFloatAsState(targetValue = progreso, label = "progreso")
     val scope = rememberCoroutineScope()
 
@@ -321,13 +356,28 @@ private fun IndicadoresProgreso() {
             ) { Text("Simular") }
         }
         Spacer(Modifier.height(4.dp))
-        Text("Indeterminado", style = MaterialTheme.typography.labelLarge)
         Row(
+            Modifier.fillMaxWidth(),
             verticalAlignment = Alignment.CenterVertically,
-            horizontalArrangement = Arrangement.spacedBy(16.dp)
+            horizontalArrangement = Arrangement.SpaceBetween
         ) {
-            LinearProgressIndicator(Modifier.weight(1f))
-            CircularProgressIndicator()
+            Text("Indeterminado", style = MaterialTheme.typography.labelLarge)
+            Row(verticalAlignment = Alignment.CenterVertically) {
+                Text("Carga en curso", style = MaterialTheme.typography.bodySmall)
+                Spacer(Modifier.size(8.dp))
+                Switch(checked = cargaActiva, onCheckedChange = { cargaActiva = it })
+            }
+        }
+        if (cargaActiva) {
+            Row(
+                verticalAlignment = Alignment.CenterVertically,
+                horizontalArrangement = Arrangement.spacedBy(16.dp)
+            ) {
+                LinearProgressIndicator(Modifier.weight(1f))
+                CircularProgressIndicator()
+            }
+        } else {
+            Respuesta("Carga detenida. Activa el interruptor para ver los indicadores.")
         }
     }
 }

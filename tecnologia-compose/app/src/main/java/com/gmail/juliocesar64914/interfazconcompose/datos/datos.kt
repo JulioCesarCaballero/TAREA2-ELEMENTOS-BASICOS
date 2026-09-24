@@ -3,10 +3,18 @@ package com.gmail.juliocesar64914.interfazconcompose.datos
 import androidx.compose.runtime.getValue
 import androidx.compose.runtime.mutableFloatStateOf
 import androidx.compose.runtime.mutableStateListOf
+import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.setValue
 import androidx.lifecycle.ViewModel
 
 const val CATEGORIA_USUARIO = "Del usuario"
+
+/** Tema elegido por el usuario. SISTEMA sigue el modo claro/oscuro del teléfono. */
+enum class ModoTema(val nombre: String) {
+    SISTEMA("Según el sistema"),
+    CLARO("Claro"),
+    OSCURO("Oscuro")
+}
 
 data class ElementoLista(
     val id: Long,
@@ -24,6 +32,10 @@ class CatalogoViewModel : ViewModel() {
 
     /** Preferencia elegida en la Sección 3 que modifica los textos de la Sección 5. */
     var escalaTexto by mutableFloatStateOf(1f)
+        private set
+
+    /** Por defecto la app sigue el modo del sistema, como pide la práctica. */
+    var modoTema by mutableStateOf(ModoTema.SISTEMA)
         private set
 
     init {
@@ -57,6 +69,10 @@ class CatalogoViewModel : ViewModel() {
 
     fun vaciarLista() {
         elementos.clear()
+    }
+
+    fun cambiarModoTema(modo: ModoTema) {
+        modoTema = modo
     }
 
     fun cambiarEscalaTexto(valor: Float) {
