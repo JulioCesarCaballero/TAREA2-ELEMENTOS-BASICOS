@@ -19,7 +19,7 @@ fun PantallaSeccion(seccion: Seccion, viewModel: CatalogoViewModel) {
         // Iremos reemplazando cada línea conforme construyamos las secciones
         Seccion.TEXTO -> Seccion1Texto(viewModel)
         Seccion.BOTONES -> Seccion2Botones()
-        Seccion.SELECCION -> EnConstruccion(seccion)
+        Seccion.SELECCION -> Seccion3Seleccion(viewModel)
         Seccion.LISTAS -> EnConstruccion(seccion)
         Seccion.INFORMACION -> EnConstruccion(seccion)
         Seccion.CONTENEDORES -> EnConstruccion(seccion)
