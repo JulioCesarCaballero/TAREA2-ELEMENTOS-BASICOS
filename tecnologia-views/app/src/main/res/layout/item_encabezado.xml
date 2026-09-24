@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Encabezado de grupo: segundo tipo de elemento de la lista -->
+<TextView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/textoEncabezado"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="?attr/colorSecondaryContainer"
+    android:paddingStart="16dp"
+    android:paddingEnd="16dp"
+    android:paddingTop="10dp"
+    android:paddingBottom="10dp"
+    android:textAppearance="?attr/textAppearanceTitleSmall"
+    android:textColor="?attr/colorOnSecondaryContainer"
+    android:textStyle="bold" />

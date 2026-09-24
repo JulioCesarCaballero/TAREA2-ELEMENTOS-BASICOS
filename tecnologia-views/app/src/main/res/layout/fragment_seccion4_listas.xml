@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <!-- Documentación de las pestañas -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:paddingStart="16dp"
+        android:paddingEnd="16dp"
+        android:paddingTop="8dp"
+        android:paddingBottom="8dp">
+
+        <TextView
+            style="@style/GuiaNombre"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Pestañas con contenido deslizable" />
+
+        <TextView
+            style="@style/GuiaTexto"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Organizan vistas relacionadas en páginas. Toca una pestaña o desliza a la izquierda o a la derecha para cambiar de página." />
+    </LinearLayout>
+
+    <!-- Pestañas secundarias: se distinguen de las pestañas principales de la app -->
+    <com.google.android.material.tabs.TabLayout
+        android:id="@+id/pestanasListas"
+        style="@style/Widget.Material3.TabLayout.Secondary"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:tabMode="fixed" />
+
+    <androidx.viewpager2.widget.ViewPager2
+        android:id="@+id/paginador"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1" />
+</LinearLayout>

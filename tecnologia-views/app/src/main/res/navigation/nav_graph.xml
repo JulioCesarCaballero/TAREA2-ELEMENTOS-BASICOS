@@ -24,12 +24,12 @@
         android:name="com.gmail.juliocesar64914.interfazconviews.pantallas.Seccion3SeleccionFragment"
         android:label="Elementos de selección" />
 
-    <!-- Estas secciones apuntan a una pantalla temporal; se reemplazan en los siguientes pasos -->
     <fragment
         android:id="@+id/seccion4Fragment"
-        android:name="com.gmail.juliocesar64914.interfazconviews.pantallas.PendienteFragment"
+        android:name="com.gmail.juliocesar64914.interfazconviews.pantallas.Seccion4ListasFragment"
         android:label="Listas y colecciones" />
 
+    <!-- Estas secciones apuntan a una pantalla temporal; se reemplazan en los siguientes pasos -->
     <fragment
         android:id="@+id/seccion5Fragment"
         android:name="com.gmail.juliocesar64914.interfazconviews.pantallas.PendienteFragment"

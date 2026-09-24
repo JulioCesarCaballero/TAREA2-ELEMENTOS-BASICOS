@@ -1,0 +1,123 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Tarjeta de documentación que aparece al inicio de la lista -->
+<com.google.android.material.card.MaterialCardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    style="@style/Widget.Material3.CardView.Elevated"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_margin="16dp">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:divider="@drawable/espacio_12dp"
+        android:orientation="vertical"
+        android:padding="16dp"
+        android:showDividers="middle">
+
+        <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+            <TextView
+                style="@style/GuiaNombre"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Lista vertical" />
+
+            <TextView
+                style="@style/GuiaTexto"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Muestra elementos uno debajo de otro y solo dibuja los visibles, por lo que funciona bien con listas largas." />
+        </LinearLayout>
+
+        <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+            <TextView
+                style="@style/GuiaNombre"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Ver detalle" />
+
+            <TextView
+                style="@style/GuiaTexto"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Toca un elemento para abrir su información completa." />
+        </LinearLayout>
+
+        <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+            <TextView
+                style="@style/GuiaNombre"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Deslizar para eliminar" />
+
+            <TextView
+                style="@style/GuiaTexto"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Arrastra un elemento hacia un lado para borrarlo de la lista." />
+        </LinearLayout>
+
+        <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+            <TextView
+                style="@style/GuiaNombre"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Actualizar arrastrando hacia abajo" />
+
+            <TextView
+                style="@style/GuiaTexto"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Desde el inicio de la lista, jala hacia abajo para recargar los datos." />
+        </LinearLayout>
+
+        <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+            <TextView
+                style="@style/GuiaNombre"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Estado vacío" />
+
+            <TextView
+                style="@style/GuiaTexto"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Cuando no hay elementos se muestra un mensaje con ilustración. Pruébalo con el botón de vaciar." />
+        </LinearLayout>
+
+        <Button
+            android:id="@+id/botonVaciar"
+            style="@style/Widget.Material3.Button.OutlinedButton.Icon"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Vaciar lista"
+            app:icon="@drawable/ic_delete_sweep" />
+
+        <TextView
+            android:id="@+id/contador"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textAppearance="?attr/textAppearanceLabelLarge"
+            android:textColor="?attr/colorPrimary" />
+    </LinearLayout>
+</com.google.android.material.card.MaterialCardView>

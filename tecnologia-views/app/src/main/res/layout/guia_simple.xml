@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Nombre y explicación de un elemento, al inicio de una página -->
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:padding="16dp">
+
+    <TextView
+        android:id="@+id/nombre"
+        style="@style/GuiaNombre"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+
+    <TextView
+        android:id="@+id/texto"
+        style="@style/GuiaTexto"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+</LinearLayout>
