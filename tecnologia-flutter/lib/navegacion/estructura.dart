@@ -2,12 +2,12 @@ import 'package:flutter/material.dart';
 
 import '../datos/catalogo_estado.dart';
 import '../pantallas/inicio.dart';
-import '../pantallas/pendiente.dart';
 import '../pantallas/seccion1_texto.dart';
 import '../pantallas/seccion2_botones.dart';
 import '../pantallas/seccion3_seleccion.dart';
 import '../pantallas/seccion4_listas.dart';
 import '../pantallas/seccion5_informacion.dart';
+import '../pantallas/seccion6_contenedores.dart';
 import 'seccion.dart';
 
 /// Estructura principal: barra superior, pestañas (Inicio + 6 secciones) y contenido.
@@ -45,7 +45,7 @@ class _EstructuraState extends State<Estructura> with SingleTickerProviderStateM
       Seccion.seleccion => const Seccion3Seleccion(),
       Seccion.listas => const Seccion4Listas(),
       Seccion.informacion => const Seccion5Informacion(),
-      final Seccion s => PantallaPendiente(seccion: s),
+      Seccion.contenedores => const Seccion6Contenedores(),
     };
   }
 
