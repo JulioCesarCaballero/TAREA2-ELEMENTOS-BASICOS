@@ -1,0 +1,642 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.core.widget.NestedScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <LinearLayout style="@style/ColumnaSeccion">
+
+        <!-- ========== 1. Fila y columna ========== -->
+        <com.gmail.juliocesar64914.interfazconviews.componentes.TarjetaDemo
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:nombre="Distribución en fila y en columna"
+            app:descripcion="LinearLayout horizontal acomoda elementos de izquierda a derecha (fila) y el vertical de arriba hacia abajo (columna). La gravedad decide hacia dónde se agrupan.">
+
+            <com.google.android.material.chip.ChipGroup
+                android:id="@+id/grupoGravedad"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:selectionRequired="true"
+                app:singleSelection="true">
+
+                <com.google.android.material.chip.Chip
+                    android:id="@+id/chipInicio"
+                    style="@style/Widget.Material3.Chip.Filter"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:checked="true"
+                    android:text="Inicio" />
+
+                <com.google.android.material.chip.Chip
+                    android:id="@+id/chipCentro"
+                    style="@style/Widget.Material3.Chip.Filter"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Centro" />
+
+                <com.google.android.material.chip.Chip
+                    android:id="@+id/chipFinal"
+                    style="@style/Widget.Material3.Chip.Filter"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Final" />
+
+            </com.google.android.material.chip.ChipGroup>
+
+            <TextView
+                style="@style/TextoEtiqueta"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Fila" />
+
+            <LinearLayout
+                android:id="@+id/fila"
+                style="@style/Marco"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:divider="@drawable/espacio_8dp"
+                android:orientation="horizontal"
+                android:showDividers="middle">
+
+                <TextView
+                    android:id="@+id/filaA"
+                    style="@style/Caja"
+                    android:backgroundTint="?attr/colorPrimaryContainer"
+                    android:text="A"
+                    android:textColor="?attr/colorOnPrimaryContainer" />
+
+                <TextView
+                    android:id="@+id/filaB"
+                    style="@style/Caja"
+                    android:backgroundTint="?attr/colorSecondaryContainer"
+                    android:text="B"
+                    android:textColor="?attr/colorOnSecondaryContainer" />
+
+                <TextView
+                    android:id="@+id/filaC"
+                    style="@style/Caja"
+                    android:backgroundTint="?attr/colorTertiaryContainer"
+                    android:text="C"
+                    android:textColor="?attr/colorOnTertiaryContainer" />
+
+            </LinearLayout>
+
+            <TextView
+                style="@style/TextoEtiqueta"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Columna" />
+
+            <LinearLayout
+                android:id="@+id/columna"
+                style="@style/Marco"
+                android:layout_width="match_parent"
+                android:layout_height="200dp"
+                android:divider="@drawable/espacio_8dp"
+                android:orientation="vertical"
+                android:showDividers="middle">
+
+                <TextView
+                    android:id="@+id/columnaA"
+                    style="@style/Caja"
+                    android:backgroundTint="?attr/colorPrimaryContainer"
+                    android:text="A"
+                    android:textColor="?attr/colorOnPrimaryContainer" />
+
+                <TextView
+                    android:id="@+id/columnaB"
+                    style="@style/Caja"
+                    android:backgroundTint="?attr/colorSecondaryContainer"
+                    android:text="B"
+                    android:textColor="?attr/colorOnSecondaryContainer" />
+
+                <TextView
+                    android:id="@+id/columnaC"
+                    style="@style/Caja"
+                    android:backgroundTint="?attr/colorTertiaryContainer"
+                    android:text="C"
+                    android:textColor="?attr/colorOnTertiaryContainer" />
+
+            </LinearLayout>
+
+            <TextView
+                android:id="@+id/respuestaGravedad"
+                style="@style/TextoRespuesta"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
+        </com.gmail.juliocesar64914.interfazconviews.componentes.TarjetaDemo>
+
+        <!-- ========== 2. Superpuesta ========== -->
+        <com.gmail.juliocesar64914.interfazconviews.componentes.TarjetaDemo
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:nombre="Distribución superpuesta"
+            app:descripcion="FrameLayout coloca elementos unos encima de otros. Sirve para poner texto sobre una imagen o un distintivo en una esquina.">
+
+            <com.google.android.material.chip.ChipGroup
+                android:id="@+id/grupoCapa"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:selectionRequired="true"
+                app:singleSelection="true">
+
+                <com.google.android.material.chip.Chip
+                    android:id="@+id/chipArribaIzq"
+                    style="@style/Widget.Material3.Chip.Filter"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Arriba izq." />
+
+                <com.google.android.material.chip.Chip
+                    android:id="@+id/chipCapaCentro"
+                    style="@style/Widget.Material3.Chip.Filter"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Centro" />
+
+                <com.google.android.material.chip.Chip
+                    android:id="@+id/chipAbajoDer"
+                    style="@style/Widget.Material3.Chip.Filter"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:checked="true"
+                    android:text="Abajo der." />
+
+            </com.google.android.material.chip.ChipGroup>
+
+            <FrameLayout
+                android:id="@+id/marcoCapas"
+                android:layout_width="match_parent"
+                android:layout_height="160dp"
+                android:background="@drawable/fondo_barra">
+
+                <!-- Capa 1: fondo -->
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:alpha="0.35"
+                    android:text="Capa de fondo"
+                    android:textAppearance="?attr/textAppearanceHeadlineSmall"
+                    android:textColor="?attr/colorOnPrimaryContainer" />
+
+                <!-- Capa 2: etiqueta que se mueve con layout_gravity -->
+                <TextView
+                    android:id="@+id/etiquetaCapa"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="bottom|end"
+                    android:layout_margin="12dp"
+                    android:background="@drawable/fondo_caja"
+                    android:backgroundTint="?attr/colorPrimary"
+                    android:drawableStart="@drawable/ic_star"
+                    android:drawablePadding="6dp"
+                    android:drawableTint="?attr/colorOnPrimary"
+                    android:gravity="center_vertical"
+                    android:paddingStart="12dp"
+                    android:paddingTop="8dp"
+                    android:paddingEnd="12dp"
+                    android:paddingBottom="8dp"
+                    android:text="Capa superior"
+                    android:textColor="?attr/colorOnPrimary" />
+            </FrameLayout>
+
+            <TextView
+                android:id="@+id/respuestaCapa"
+                style="@style/TextoRespuesta"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
+        </com.gmail.juliocesar64914.interfazconviews.componentes.TarjetaDemo>
+
+        <!-- ========== 3. Contenedor con desplazamiento ========== -->
+        <com.gmail.juliocesar64914.interfazconviews.componentes.TarjetaDemo
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:nombre="Contenedor con desplazamiento vertical"
+            app:descripcion="Cuando el contenido es más alto que el espacio disponible, permite recorrerlo deslizando el dedo. A diferencia de una lista, dibuja todo su contenido a la vez.">
+
+            <androidx.core.widget.NestedScrollView
+                android:id="@+id/desplazable"
+                android:layout_width="match_parent"
+                android:layout_height="180dp"
+                android:background="@drawable/fondo_marco">
+
+                <LinearLayout
+                    android:id="@+id/contenidoDesplazable"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:divider="@drawable/espacio_8dp"
+                    android:orientation="vertical"
+                    android:padding="12dp"
+                    android:showDividers="middle" />
+            </androidx.core.widget.NestedScrollView>
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <Button
+                    android:id="@+id/botonIrInicio"
+                    style="@style/Widget.Material3.Button.OutlinedButton"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Inicio" />
+
+                <Button
+                    android:id="@+id/botonIrFinal"
+                    style="@style/Widget.Material3.Button.OutlinedButton"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="8dp"
+                    android:text="Final" />
+            </LinearLayout>
+
+            <TextView
+                android:id="@+id/respuestaDesplazamiento"
+                style="@style/TextoRespuesta"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Recorrido: 0 %" />
+        </com.gmail.juliocesar64914.interfazconviews.componentes.TarjetaDemo>
+
+        <!-- ========== 4. Barra superior ========== -->
+        <com.gmail.juliocesar64914.interfazconviews.componentes.TarjetaDemo
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:nombre="Barra superior con título y acciones"
+            app:descripcion="Muestra el nombre de la pantalla y las acciones más usadas. Las acciones menos frecuentes se guardan en el menú de tres puntos.">
+
+            <com.google.android.material.appbar.MaterialToolbar
+                android:id="@+id/barraDemo"
+                android:layout_width="match_parent"
+                android:layout_height="?attr/actionBarSize"
+                android:background="@drawable/fondo_barra"
+                app:menu="@menu/menu_demo"
+                app:navigationContentDescription="Regresar"
+                app:navigationIcon="@drawable/ic_arrow_back"
+                app:title="Mis notas" />
+
+            <TextView
+                android:id="@+id/respuestaBarra"
+                style="@style/TextoRespuesta"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Toca un ícono de la barra." />
+        </com.gmail.juliocesar64914.interfazconviews.componentes.TarjetaDemo>
+
+        <!-- ========== 5. Barra de navegación inferior ========== -->
+        <com.gmail.juliocesar64914.interfazconviews.componentes.TarjetaDemo
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:nombre="Barra de navegación inferior"
+            app:descripcion="Permite cambiar entre las pantallas principales de una app con un toque. Se recomienda para 3 a 5 destinos.">
+
+            <LinearLayout
+                android:id="@+id/marcoNavInferior"
+                android:layout_width="match_parent"
+                android:layout_height="240dp"
+                android:background="@drawable/fondo_marco"
+                android:orientation="vertical">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="0dp"
+                    android:layout_weight="1"
+                    android:gravity="center"
+                    android:orientation="vertical">
+
+                    <ImageView
+                        android:id="@+id/iconoDestino"
+                        android:layout_width="40dp"
+                        android:layout_height="40dp"
+                        android:importantForAccessibility="no"
+                        android:src="@drawable/ic_home"
+                        app:tint="?attr/colorPrimary" />
+
+                    <TextView
+                        android:id="@+id/textoDestino"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Pantalla: Inicio"
+                        android:textAppearance="?attr/textAppearanceTitleMedium" />
+                </LinearLayout>
+
+                <com.google.android.material.bottomnavigation.BottomNavigationView
+                    android:id="@+id/navInferior"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    app:menu="@menu/menu_inferior" />
+            </LinearLayout>
+        </com.gmail.juliocesar64914.interfazconviews.componentes.TarjetaDemo>
+
+        <!-- ========== 6. Menú lateral ========== -->
+        <com.gmail.juliocesar64914.interfazconviews.componentes.TarjetaDemo
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:nombre="Menú lateral (drawer)"
+            app:descripcion="Panel que se desliza desde el borde izquierdo con las secciones de la app. Se abre con el ícono de menú o arrastrando desde el borde.">
+
+            <!-- DrawerLayout necesita un alto fijo -->
+            <androidx.drawerlayout.widget.DrawerLayout
+                android:id="@+id/cajonDemo"
+                android:layout_width="match_parent"
+                android:layout_height="280dp"
+                android:background="@drawable/fondo_marco">
+
+                <!-- Contenido principal -->
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="vertical">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:background="?attr/colorSecondaryContainer"
+                        android:gravity="center_vertical"
+                        android:orientation="horizontal"
+                        android:padding="4dp">
+
+                        <Button
+                            android:id="@+id/botonAbrirMenu"
+                            style="@style/Widget.Material3.Button.IconButton"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:contentDescription="Abrir menú"
+                            app:icon="@drawable/ic_menu" />
+
+                        <TextView
+                            android:id="@+id/tituloCajon"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Inicio"
+                            android:textAppearance="?attr/textAppearanceTitleMedium" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:gravity="center"
+                        android:orientation="vertical">
+
+                        <ImageView
+                            android:id="@+id/iconoCajon"
+                            android:layout_width="40dp"
+                            android:layout_height="40dp"
+                            android:importantForAccessibility="no"
+                            android:src="@drawable/ic_home"
+                            app:tint="?attr/colorPrimary" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Toca ☰ para cambiar de sección" />
+                    </LinearLayout>
+                </LinearLayout>
+
+                <!-- Panel lateral -->
+                <com.google.android.material.navigation.NavigationView
+                    android:id="@+id/navLateral"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_gravity="start"
+                    app:headerLayout="@layout/cabecera_menu"
+                    app:menu="@menu/menu_lateral" />
+            </androidx.drawerlayout.widget.DrawerLayout>
+        </com.gmail.juliocesar64914.interfazconviews.componentes.TarjetaDemo>
+
+        <!-- ========== 7. Restricciones (ConstraintLayout) ========== -->
+        <com.gmail.juliocesar64914.interfazconviews.componentes.TarjetaDemo
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:nombre="Distribución con restricciones"
+            app:descripcion="ConstraintLayout ubica cada vista con reglas respecto a otras. Una cadena reparte vistas enlazadas entre sí y una guía divide el espacio en un porcentaje.">
+
+            <TextView
+                style="@style/TextoEtiqueta"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Cadena" />
+
+            <com.google.android.material.chip.ChipGroup
+                android:id="@+id/grupoCadena"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:selectionRequired="true"
+                app:singleSelection="true">
+
+                <com.google.android.material.chip.Chip
+                    android:id="@+id/chipExtendida"
+                    style="@style/Widget.Material3.Chip.Filter"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:checked="true"
+                    android:text="Extendida" />
+
+                <com.google.android.material.chip.Chip
+                    android:id="@+id/chipInterna"
+                    style="@style/Widget.Material3.Chip.Filter"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Interna" />
+
+                <com.google.android.material.chip.Chip
+                    android:id="@+id/chipAgrupada"
+                    style="@style/Widget.Material3.Chip.Filter"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Agrupada" />
+
+            </com.google.android.material.chip.ChipGroup>
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/restriccionesCadena"
+                style="@style/Marco"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <TextView
+                    android:id="@+id/cadenaA"
+                    style="@style/Caja"
+                    android:backgroundTint="?attr/colorPrimaryContainer"
+                    android:text="A"
+                    android:textColor="?attr/colorOnPrimaryContainer"
+                    app:layout_constraintEnd_toStartOf="@id/cadenaB"
+                    app:layout_constraintHorizontal_chainStyle="spread"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <TextView
+                    android:id="@+id/cadenaB"
+                    style="@style/Caja"
+                    android:backgroundTint="?attr/colorSecondaryContainer"
+                    android:text="B"
+                    android:textColor="?attr/colorOnSecondaryContainer"
+                    app:layout_constraintEnd_toStartOf="@id/cadenaC"
+                    app:layout_constraintStart_toEndOf="@id/cadenaA"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <TextView
+                    android:id="@+id/cadenaC"
+                    style="@style/Caja"
+                    android:backgroundTint="?attr/colorTertiaryContainer"
+                    android:text="C"
+                    android:textColor="?attr/colorOnTertiaryContainer"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toEndOf="@id/cadenaB"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <TextView
+                android:id="@+id/respuestaCadena"
+                style="@style/TextoRespuesta"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
+
+            <TextView
+                style="@style/TextoEtiqueta"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:text="Guía en porcentaje" />
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="64dp">
+
+                <androidx.constraintlayout.widget.Guideline
+                    android:id="@+id/guia"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    app:layout_constraintGuide_percent="0.5" />
+
+                <TextView
+                    android:id="@+id/bloqueIzquierdo"
+                    android:layout_width="0dp"
+                    android:layout_height="0dp"
+                    android:layout_marginEnd="4dp"
+                    android:background="@drawable/fondo_caja"
+                    android:backgroundTint="?attr/colorPrimaryContainer"
+                    android:gravity="center"
+                    android:textColor="?attr/colorOnPrimaryContainer"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toStartOf="@id/guia"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <TextView
+                    android:id="@+id/bloqueDerecho"
+                    android:layout_width="0dp"
+                    android:layout_height="0dp"
+                    android:layout_marginStart="4dp"
+                    android:background="@drawable/fondo_caja"
+                    android:backgroundTint="?attr/colorTertiaryContainer"
+                    android:gravity="center"
+                    android:textColor="?attr/colorOnTertiaryContainer"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toEndOf="@id/guia"
+                    app:layout_constraintTop_toTopOf="parent" />
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <com.google.android.material.slider.Slider
+                android:id="@+id/deslizadorGuia"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:contentDescription="Posición de la guía"
+                android:stepSize="10"
+                android:value="50"
+                android:valueFrom="10"
+                android:valueTo="90" />
+        </com.gmail.juliocesar64914.interfazconviews.componentes.TarjetaDemo>
+
+        <!-- ========== 8. Pesos proporcionales ========== -->
+        <com.gmail.juliocesar64914.interfazconviews.componentes.TarjetaDemo
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:nombre="Distribución con pesos proporcionales"
+            app:descripcion="Con layout_weight cada elemento recibe una parte del espacio según su peso: uno con peso 2 ocupa el doble que uno con peso 1. Así la interfaz se adapta a cualquier ancho.">
+
+            <LinearLayout
+                android:id="@+id/filaPesos"
+                android:layout_width="match_parent"
+                android:layout_height="64dp"
+                android:divider="@drawable/espacio_8dp"
+                android:orientation="horizontal"
+                android:showDividers="middle">
+
+                <TextView
+                    android:id="@+id/bloqueA"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:background="@drawable/fondo_caja"
+                    android:backgroundTint="?attr/colorPrimaryContainer"
+                    android:gravity="center"
+                    android:textColor="?attr/colorOnPrimaryContainer" />
+
+                <TextView
+                    android:id="@+id/bloqueB"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="2"
+                    android:background="@drawable/fondo_caja"
+                    android:backgroundTint="?attr/colorSecondaryContainer"
+                    android:gravity="center"
+                    android:textColor="?attr/colorOnSecondaryContainer" />
+
+                <TextView
+                    android:id="@+id/bloqueC"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:background="@drawable/fondo_caja"
+                    android:backgroundTint="?attr/colorTertiaryContainer"
+                    android:gravity="center"
+                    android:textColor="?attr/colorOnTertiaryContainer" />
+            </LinearLayout>
+
+            <TextView
+                android:id="@+id/etiquetaPesoA"
+                style="@style/TextoEtiqueta"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+
+            <com.google.android.material.slider.Slider
+                android:id="@+id/deslizadorPesoA"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:contentDescription="Peso de A"
+                android:stepSize="1"
+                android:value="1"
+                android:valueFrom="1"
+                android:valueTo="4" />
+
+            <TextView
+                android:id="@+id/etiquetaPesoB"
+                style="@style/TextoEtiqueta"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+
+            <com.google.android.material.slider.Slider
+                android:id="@+id/deslizadorPesoB"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:contentDescription="Peso de B"
+                android:stepSize="1"
+                android:value="2"
+                android:valueFrom="1"
+                android:valueTo="4" />
+
+            <TextView
+                android:id="@+id/respuestaPesos"
+                style="@style/TextoRespuesta"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
+        </com.gmail.juliocesar64914.interfazconviews.componentes.TarjetaDemo>
+    </LinearLayout>
+</androidx.core.widget.NestedScrollView>

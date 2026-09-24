@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Acciones de la barra superior de ejemplo (Sección 6) -->
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <item
+        android:id="@+id/accionBuscar"
+        android:icon="@drawable/ic_search"
+        android:title="Buscar"
+        app:showAsAction="always" />
+    <item
+        android:id="@+id/accionFavorito"
+        android:icon="@drawable/ic_favorite_border"
+        android:title="Favorito"
+        app:showAsAction="always" />
+    <!-- showAsAction="never": van al menú de tres puntos -->
+    <item
+        android:id="@+id/accionOrdenar"
+        android:title="Ordenar"
+        app:showAsAction="never" />
+    <item
+        android:id="@+id/accionCompartir"
+        android:title="Compartir"
+        app:showAsAction="never" />
+    <item
+        android:id="@+id/accionAjustes"
+        android:title="Ajustes"
+        app:showAsAction="never" />
+</menu>

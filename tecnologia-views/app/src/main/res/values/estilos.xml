@@ -49,4 +49,19 @@
         <item name="android:paddingBottom">16dp</item>
         <item name="android:textAppearance">?attr/textAppearanceBodyLarge</item>
     </style>
+
+    <!-- Cuadro de color con una letra para visualizar distribuciones (Sección 6) -->
+    <style name="Caja">
+        <item name="android:layout_width">44dp</item>
+        <item name="android:layout_height">44dp</item>
+        <item name="android:background">@drawable/fondo_caja</item>
+        <item name="android:gravity">center</item>
+        <item name="android:textStyle">bold</item>
+    </style>
+
+    <!-- Recuadro que simula una pantalla -->
+    <style name="Marco">
+        <item name="android:background">@drawable/fondo_marco</item>
+        <item name="android:padding">8dp</item>
+    </style>
 </resources>
