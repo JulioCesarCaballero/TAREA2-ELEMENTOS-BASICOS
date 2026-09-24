@@ -17,8 +17,8 @@ import com.gmail.juliocesar64914.interfazconcompose.navegacion.Seccion
 fun PantallaSeccion(seccion: Seccion, viewModel: CatalogoViewModel) {
     when (seccion) {
         // Iremos reemplazando cada línea conforme construyamos las secciones
-        Seccion.TEXTO -> EnConstruccion(seccion)
-        Seccion.BOTONES -> EnConstruccion(seccion)
+        Seccion.TEXTO -> Seccion1Texto(viewModel)
+        Seccion.BOTONES -> Seccion2Botones()
         Seccion.SELECCION -> EnConstruccion(seccion)
         Seccion.LISTAS -> EnConstruccion(seccion)
         Seccion.INFORMACION -> EnConstruccion(seccion)
