@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- Texto que muestra la respuesta visible de cada demo -->
+    <style name="TextoRespuesta">
+        <item name="android:textAppearance">?attr/textAppearanceBodyMedium</item>
+        <item name="android:textColor">?attr/colorPrimary</item>
+        <item name="android:fontFamily">sans-serif-medium</item>
+    </style>
+
+    <!-- Subtítulo pequeño dentro de una demo -->
+    <style name="TextoEtiqueta">
+        <item name="android:textAppearance">?attr/textAppearanceLabelLarge</item>
+        <item name="android:textColor">?attr/colorOnSurface</item>
+    </style>
+
+    <!-- Columna con desplazamiento que usan todas las secciones -->
+    <style name="ColumnaSeccion">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:orientation">vertical</item>
+        <item name="android:padding">16dp</item>
+        <item name="android:divider">@drawable/espacio_16dp</item>
+        <item name="android:showDividers">middle</item>
+    </style>
+</resources>

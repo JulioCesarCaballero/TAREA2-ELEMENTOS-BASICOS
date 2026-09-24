@@ -1,0 +1,307 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.core.widget.NestedScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <LinearLayout style="@style/ColumnaSeccion">
+
+        <!-- ========== 1. Campo simple ========== -->
+        <com.gmail.juliocesar64914.interfazconviews.componentes.TarjetaDemo
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:nombre="Campo de texto simple"
+            app:descripcion="Permite escribir una línea de texto. La etiqueta indica qué dato se espera y el texto de ayuda muestra un ejemplo mientras el campo está vacío.">
+
+            <com.google.android.material.textfield.TextInputLayout
+                style="@style/Widget.Material3.TextInputLayout.OutlinedBox"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Nombre"
+                app:placeholderText="Ej. Julio César"
+                app:startIconDrawable="@drawable/ic_person">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/campoNombre"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:inputType="textPersonName|textCapWords" />
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <TextView
+                android:id="@+id/respuestaNombre"
+                style="@style/TextoRespuesta"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Aún no has escrito nada." />
+        </com.gmail.juliocesar64914.interfazconviews.componentes.TarjetaDemo>
+
+        <!-- ========== 2. Campo con validación ========== -->
+        <com.gmail.juliocesar64914.interfazconviews.componentes.TarjetaDemo
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:nombre="Campo con validación"
+            app:descripcion="Revisa el dato mientras se escribe. Si no cumple las reglas, el campo cambia a color de error y muestra un mensaje que explica cómo corregirlo.">
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/capaUsuario"
+                style="@style/Widget.Material3.TextInputLayout.OutlinedBox"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Nombre de usuario"
+                app:endIconDrawable="@drawable/ic_check"
+                app:endIconMode="custom"
+                app:endIconTint="?attr/colorPrimary"
+                app:helperText="Mínimo 4 caracteres: letras, números o guion bajo."
+                app:helperTextEnabled="true">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/campoUsuario"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:inputType="text" />
+            </com.google.android.material.textfield.TextInputLayout>
+        </com.gmail.juliocesar64914.interfazconviews.componentes.TarjetaDemo>
+
+        <!-- ========== 3. Contraseña ========== -->
+        <com.gmail.juliocesar64914.interfazconviews.componentes.TarjetaDemo
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:nombre="Campo de contraseña"
+            app:descripcion="Oculta los caracteres para proteger datos sensibles. El botón del ojo permite mostrar u ocultar el contenido para revisar lo escrito.">
+
+            <com.google.android.material.textfield.TextInputLayout
+                style="@style/Widget.Material3.TextInputLayout.OutlinedBox"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Contraseña"
+                app:endIconMode="password_toggle">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/campoContrasena"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:inputType="textPassword" />
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <com.google.android.material.progressindicator.LinearProgressIndicator
+                android:id="@+id/barraSeguridad"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:max="4"
+                android:progress="0" />
+
+            <TextView
+                android:id="@+id/textoSeguridad"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Escribe una contraseña."
+                android:textAppearance="?attr/textAppearanceBodySmall" />
+        </com.gmail.juliocesar64914.interfazconviews.componentes.TarjetaDemo>
+
+        <!-- ========== 4. Tipos de teclado ========== -->
+        <com.gmail.juliocesar64914.interfazconviews.componentes.TarjetaDemo
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:nombre="Tipos de teclado"
+            app:descripcion="Cada campo abre el teclado más adecuado para su dato: solo números, uno con @ para correos o uno de marcación telefónica. Toca cada campo para comparar.">
+
+            <com.google.android.material.textfield.TextInputLayout
+                style="@style/Widget.Material3.TextInputLayout.OutlinedBox"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Edad (numérico)">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/campoEdad"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:imeOptions="actionNext"
+                    android:inputType="number"
+                    android:maxLength="3" />
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <com.google.android.material.textfield.TextInputLayout
+                style="@style/Widget.Material3.TextInputLayout.OutlinedBox"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Correo electrónico"
+                app:startIconDrawable="@drawable/ic_email">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/campoCorreo"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:imeOptions="actionNext"
+                    android:inputType="textEmailAddress" />
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <com.google.android.material.textfield.TextInputLayout
+                style="@style/Widget.Material3.TextInputLayout.OutlinedBox"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Teléfono (10 dígitos)"
+                app:startIconDrawable="@drawable/ic_phone">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/campoTelefono"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:digits="0123456789"
+                    android:imeOptions="actionDone"
+                    android:inputType="phone"
+                    android:maxLength="10" />
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <TextView
+                android:id="@+id/respuestaTeclados"
+                style="@style/TextoRespuesta"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
+        </com.gmail.juliocesar64914.interfazconviews.componentes.TarjetaDemo>
+
+        <!-- ========== 5. Multilínea ========== -->
+        <com.gmail.juliocesar64914.interfazconviews.componentes.TarjetaDemo
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:nombre="Campo multilínea"
+            app:descripcion="Sirve para textos largos como comentarios o descripciones. Crece al escribir hasta un límite de líneas y aquí incluye un contador de caracteres.">
+
+            <com.google.android.material.textfield.TextInputLayout
+                style="@style/Widget.Material3.TextInputLayout.OutlinedBox"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Comentarios"
+                app:counterEnabled="true"
+                app:counterMaxLength="200"
+                app:placeholderText="Escribe tu opinión sobre la app…">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/campoComentarios"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="top|start"
+                    android:inputType="textMultiLine|textCapSentences"
+                    android:maxLength="200"
+                    android:maxLines="6"
+                    android:minLines="3" />
+            </com.google.android.material.textfield.TextInputLayout>
+        </com.gmail.juliocesar64914.interfazconviews.componentes.TarjetaDemo>
+
+        <!-- ========== 6. Sugerencias ========== -->
+        <com.gmail.juliocesar64914.interfazconviews.componentes.TarjetaDemo
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:nombre="Campo con sugerencias"
+            app:descripcion="Muestra opciones que coinciden con lo que se escribe, para completar más rápido y evitar errores. La flecha despliega la lista.">
+
+            <com.google.android.material.textfield.TextInputLayout
+                style="@style/Widget.Material3.TextInputLayout.OutlinedBox.ExposedDropdownMenu"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Lenguaje de programación favorito">
+
+                <com.google.android.material.textfield.MaterialAutoCompleteTextView
+                    android:id="@+id/campoLenguaje"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:completionThreshold="1"
+                    android:inputType="text" />
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <TextView
+                android:id="@+id/respuestaLenguaje"
+                style="@style/TextoRespuesta"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Escribe una letra o toca la flecha." />
+        </com.gmail.juliocesar64914.interfazconviews.componentes.TarjetaDemo>
+
+        <!-- ========== 7. Barra de búsqueda ========== -->
+        <com.gmail.juliocesar64914.interfazconviews.componentes.TarjetaDemo
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:nombre="Barra de búsqueda"
+            app:descripcion="Filtra un conjunto de datos conforme se escribe. Tiene ícono de lupa, botón para borrar y la tecla de búsqueda del teclado cierra el teclado.">
+
+            <com.google.android.material.textfield.TextInputLayout
+                style="@style/Widget.Material3.TextInputLayout.OutlinedBox"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:boxCornerRadiusBottomEnd="28dp"
+                app:boxCornerRadiusBottomStart="28dp"
+                app:boxCornerRadiusTopEnd="28dp"
+                app:boxCornerRadiusTopStart="28dp"
+                app:endIconMode="clear_text"
+                app:hintEnabled="false"
+                app:startIconDrawable="@drawable/ic_search">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/campoBusqueda"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="Buscar un estado de México"
+                    android:imeOptions="actionSearch"
+                    android:inputType="text" />
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <LinearLayout
+                android:id="@+id/resultadosBusqueda"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical" />
+
+            <TextView
+                android:id="@+id/respuestaBusqueda"
+                style="@style/TextoRespuesta"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
+        </com.gmail.juliocesar64914.interfazconviews.componentes.TarjetaDemo>
+
+        <!-- ========== 8. Conexión con la Sección 4 ========== -->
+        <com.gmail.juliocesar64914.interfazconviews.componentes.TarjetaDemo
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:nombre="Conexión con Listas y colecciones"
+            app:descripcion="Lo que escribas aquí se agrega al inicio de la lista de la Sección 4. Ambas secciones comparten los datos a través de un ViewModel.">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center_vertical"
+                android:orientation="horizontal">
+
+                <com.google.android.material.textfield.TextInputLayout
+                    style="@style/Widget.Material3.TextInputLayout.OutlinedBox"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:hint="Nuevo elemento">
+
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/campoNuevo"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:imeOptions="actionDone"
+                        android:inputType="textCapSentences" />
+                </com.google.android.material.textfield.TextInputLayout>
+
+                <Button
+                    android:id="@+id/botonAgregar"
+                    style="@style/Widget.Material3.Button.IconButton.Filled"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="8dp"
+                    android:contentDescription="Agregar a la lista"
+                    app:icon="@drawable/ic_add" />
+            </LinearLayout>
+
+            <TextView
+                android:id="@+id/respuestaAgregar"
+                style="@style/TextoRespuesta"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:visibility="gone" />
+        </com.gmail.juliocesar64914.interfazconviews.componentes.TarjetaDemo>
+    </LinearLayout>
+</androidx.core.widget.NestedScrollView>

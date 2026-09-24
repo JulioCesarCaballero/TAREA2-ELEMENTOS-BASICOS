@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- Atributos de la tarjeta de documentación (nombre + explicación + demo) -->
+    <declare-styleable name="TarjetaDemo">
+        <attr name="nombre" format="string" />
+        <attr name="descripcion" format="string" />
+    </declare-styleable>
+</resources>
