@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- Clave para guardar el tamaño original de cada texto antes de escalarlo (Sección 5) -->
+    <item name="tamano_original" type="id" />
+</resources>

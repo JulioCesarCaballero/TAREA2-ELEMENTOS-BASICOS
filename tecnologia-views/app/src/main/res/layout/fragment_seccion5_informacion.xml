@@ -1,0 +1,681 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.core.widget.NestedScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/raizSeccion5"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <LinearLayout style="@style/ColumnaSeccion">
+
+        <!-- Aviso de la conexión con la Sección 3 -->
+        <com.google.android.material.card.MaterialCardView
+            style="@style/Widget.Material3.CardView.Filled"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center_vertical"
+                android:orientation="horizontal"
+                android:padding="16dp">
+
+                <ImageView
+                    android:layout_width="24dp"
+                    android:layout_height="24dp"
+                    android:importantForAccessibility="no"
+                    android:src="@drawable/ic_text_fields" />
+
+                <TextView
+                    android:id="@+id/avisoEscala"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="12dp"
+                    android:layout_weight="1"
+                    android:textAppearance="?attr/textAppearanceBodyMedium" />
+            </LinearLayout>
+        </com.google.android.material.card.MaterialCardView>
+
+        <!-- ========== 1. Estilos de texto ========== -->
+        <com.gmail.juliocesar64914.interfazconviews.componentes.TarjetaDemo
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:nombre="Textos con distintos estilos"
+            app:descripcion="El tamaño, el grosor y el color crean jerarquía: indican qué leer primero. El énfasis resalta palabras clave. Escribe un texto y cambia su énfasis.">
+
+            <com.google.android.material.textfield.TextInputLayout
+                style="@style/Widget.Material3.TextInputLayout.OutlinedBox"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Texto de ejemplo">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/campoMuestra"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:inputType="text"
+                    android:maxLength="30"
+                    android:text="Hola, mundo" />
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <TextView
+                style="@style/TextoEtiqueta"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Tamaños" />
+
+            <TextView
+                android:id="@+id/muestraTitulo"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textAppearance="?attr/textAppearanceHeadlineMedium" />
+
+            <TextView
+                android:id="@+id/muestraSubtitulo"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textAppearance="?attr/textAppearanceTitleLarge" />
+
+            <TextView
+                android:id="@+id/muestraCuerpo"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textAppearance="?attr/textAppearanceBodyLarge" />
+
+            <TextView
+                android:id="@+id/muestraEtiqueta"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textAppearance="?attr/textAppearanceLabelSmall" />
+
+            <com.google.android.material.divider.MaterialDivider
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
+
+            <TextView
+                style="@style/TextoEtiqueta"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Énfasis" />
+
+            <com.google.android.material.chip.ChipGroup
+                android:id="@+id/grupoEnfasis"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <com.google.android.material.chip.Chip
+                    android:id="@+id/chipNegrita"
+                    style="@style/Widget.Material3.Chip.Filter"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:checked="true"
+                    android:text="Negrita" />
+
+                <com.google.android.material.chip.Chip
+                    android:id="@+id/chipCursiva"
+                    style="@style/Widget.Material3.Chip.Filter"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Cursiva" />
+
+                <com.google.android.material.chip.Chip
+                    android:id="@+id/chipSubrayado"
+                    style="@style/Widget.Material3.Chip.Filter"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Subrayado" />
+
+                <com.google.android.material.chip.Chip
+                    android:id="@+id/chipTachado"
+                    style="@style/Widget.Material3.Chip.Filter"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Tachado" />
+
+                <com.google.android.material.chip.Chip
+                    android:id="@+id/chipColor"
+                    style="@style/Widget.Material3.Chip.Filter"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Color" />
+
+            </com.google.android.material.chip.ChipGroup>
+
+            <TextView
+                android:id="@+id/resultadoEnfasis"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textAppearance="?attr/textAppearanceTitleMedium" />
+
+            <com.google.android.material.divider.MaterialDivider
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
+
+            <TextView
+                style="@style/TextoEtiqueta"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Texto largo" />
+
+            <TextView
+                android:id="@+id/textoLargo"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:ellipsize="end"
+                android:maxLines="1"
+                android:text="Este párrafo es demasiado largo para caber en una sola línea. Cuando está contraído se corta con puntos suspensivos; al expandirlo se muestra completo y ocupa todas las líneas que necesite."
+                android:textAppearance="?attr/textAppearanceBodyMedium" />
+
+            <Button
+                android:id="@+id/botonVerMas"
+                style="@style/Widget.Material3.Button.TextButton"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Ver más" />
+        </com.gmail.juliocesar64914.interfazconviews.componentes.TarjetaDemo>
+
+        <!-- ========== 2. Imágenes ========== -->
+        <com.gmail.juliocesar64914.interfazconviews.componentes.TarjetaDemo
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:nombre="Imagen local y desde URL"
+            app:descripcion="La imagen local viene dentro de la app; la otra se descarga de internet. El modo de escalado decide cómo se acomodan en su espacio.">
+
+            <com.google.android.material.chip.ChipGroup
+                android:id="@+id/grupoEscala"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:selectionRequired="true"
+                app:singleSelection="true">
+
+                <com.google.android.material.chip.Chip
+                    android:id="@+id/chipAjustar"
+                    style="@style/Widget.Material3.Chip.Filter"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:checked="true"
+                    android:text="Ajustar" />
+
+                <com.google.android.material.chip.Chip
+                    android:id="@+id/chipRecortar"
+                    style="@style/Widget.Material3.Chip.Filter"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Recortar" />
+
+                <com.google.android.material.chip.Chip
+                    android:id="@+id/chipEstirar"
+                    style="@style/Widget.Material3.Chip.Filter"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Estirar" />
+
+                <com.google.android.material.chip.Chip
+                    android:id="@+id/chipOriginal"
+                    style="@style/Widget.Material3.Chip.Filter"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Original" />
+
+            </com.google.android.material.chip.ChipGroup>
+
+            <!-- ConstraintLayout: dos cuadros iguales (proporción 1:1) uno junto al otro -->
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <ImageView
+                    android:id="@+id/imagenLocal"
+                    android:layout_width="0dp"
+                    android:layout_height="0dp"
+                    android:layout_marginEnd="6dp"
+                    android:background="@drawable/fondo_area"
+                    android:contentDescription="Paisaje de montañas (imagen local)"
+                    android:src="@drawable/paisaje_local"
+                    app:layout_constraintDimensionRatio="1:1"
+                    app:layout_constraintEnd_toStartOf="@id/imagenUrl"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <ImageView
+                    android:id="@+id/imagenUrl"
+                    android:layout_width="0dp"
+                    android:layout_height="0dp"
+                    android:layout_marginStart="6dp"
+                    android:background="@drawable/fondo_area"
+                    android:contentDescription="Paisaje descargado de internet"
+                    app:layout_constraintDimensionRatio="1:1"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toEndOf="@id/imagenLocal"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="4dp"
+                    android:text="Local"
+                    android:textAppearance="?attr/textAppearanceLabelMedium"
+                    app:layout_constraintEnd_toEndOf="@id/imagenLocal"
+                    app:layout_constraintStart_toStartOf="@id/imagenLocal"
+                    app:layout_constraintTop_toBottomOf="@id/imagenLocal" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="4dp"
+                    android:text="Desde URL"
+                    android:textAppearance="?attr/textAppearanceLabelMedium"
+                    app:layout_constraintEnd_toEndOf="@id/imagenUrl"
+                    app:layout_constraintStart_toStartOf="@id/imagenUrl"
+                    app:layout_constraintTop_toBottomOf="@id/imagenUrl" />
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <TextView
+                android:id="@+id/respuestaEscala"
+                style="@style/TextoRespuesta"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
+
+            <TextView
+                android:id="@+id/estadoUrl"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Cargando imagen desde internet…"
+                android:textAppearance="?attr/textAppearanceBodySmall" />
+        </com.gmail.juliocesar64914.interfazconviews.componentes.TarjetaDemo>
+
+        <!-- ========== 3. Indicadores de progreso ========== -->
+        <com.gmail.juliocesar64914.interfazconviews.componentes.TarjetaDemo
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:nombre="Indicadores de progreso"
+            app:descripcion="El modo determinado muestra cuánto falta para terminar una tarea. El indeterminado solo indica que algo está en proceso, sin saber cuánto tardará.">
+
+            <TextView
+                android:id="@+id/textoProgreso"
+                style="@style/TextoEtiqueta"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center_vertical"
+                android:orientation="horizontal">
+
+                <com.google.android.material.progressindicator.LinearProgressIndicator
+                    android:id="@+id/progresoLineal"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:max="100" />
+
+                <com.google.android.material.progressindicator.CircularProgressIndicator
+                    android:id="@+id/progresoCircular"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="16dp"
+                    android:max="100" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <Button
+                    android:id="@+id/botonMenos"
+                    style="@style/Widget.Material3.Button.OutlinedButton"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="−10 %" />
+
+                <Button
+                    android:id="@+id/botonMas"
+                    style="@style/Widget.Material3.Button.OutlinedButton"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="8dp"
+                    android:text="+10 %" />
+
+                <Button
+                    android:id="@+id/botonSimular"
+                    style="@style/Widget.Material3.Button.TonalButton"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="8dp"
+                    android:text="Simular" />
+            </LinearLayout>
+
+            <com.google.android.material.materialswitch.MaterialSwitch
+                android:id="@+id/interruptorCarga"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:checked="true"
+                android:text="Indeterminado: carga en curso"
+                android:textAppearance="?attr/textAppearanceLabelLarge" />
+
+            <LinearLayout
+                android:id="@+id/filaIndeterminada"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center_vertical"
+                android:orientation="horizontal">
+
+                <com.google.android.material.progressindicator.LinearProgressIndicator
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:indeterminate="true" />
+
+                <com.google.android.material.progressindicator.CircularProgressIndicator
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="16dp"
+                    android:indeterminate="true" />
+            </LinearLayout>
+
+            <TextView
+                android:id="@+id/textoCargaDetenida"
+                style="@style/TextoRespuesta"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Carga detenida. Activa el interruptor para ver los indicadores."
+                android:visibility="gone" />
+        </com.gmail.juliocesar64914.interfazconviews.componentes.TarjetaDemo>
+
+        <!-- ========== 4. Toast y snackbar ========== -->
+        <com.gmail.juliocesar64914.interfazconviews.componentes.TarjetaDemo
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:nombre="Toast y snackbar"
+            app:descripcion="El toast es un aviso breve del sistema que desaparece solo. El snackbar aparece en la parte inferior de la app y puede incluir una acción, como deshacer.">
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <Button
+                    android:id="@+id/botonToast"
+                    style="@style/Widget.Material3.Button.OutlinedButton"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Mostrar toast" />
+
+                <Button
+                    android:id="@+id/botonArchivar"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="8dp"
+                    android:text="Archivar" />
+            </LinearLayout>
+
+            <TextView
+                android:id="@+id/respuestaArchivados"
+                style="@style/TextoRespuesta"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Mensajes archivados: 0" />
+        </com.gmail.juliocesar64914.interfazconviews.componentes.TarjetaDemo>
+
+        <!-- ========== 5. Diálogo de confirmación ========== -->
+        <com.gmail.juliocesar64914.interfazconviews.componentes.TarjetaDemo
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:nombre="Diálogo de confirmación"
+            app:descripcion="Interrumpe al usuario para confirmar una acción importante antes de realizarla. Aquí restablece el tamaño de texto que se eligió en la Sección 3.">
+
+            <Button
+                android:id="@+id/botonRestablecer"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Restablecer tamaño de texto" />
+
+            <TextView
+                android:id="@+id/respuestaDialogo"
+                style="@style/TextoRespuesta"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Aún no has abierto el diálogo." />
+        </com.gmail.juliocesar64914.interfazconviews.componentes.TarjetaDemo>
+
+        <!-- ========== 6. Hoja inferior ========== -->
+        <com.gmail.juliocesar64914.interfazconviews.componentes.TarjetaDemo
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:nombre="Hoja inferior (bottom sheet)"
+            app:descripcion="Panel que sube desde la parte inferior con opciones o contenido adicional. Se cierra al deslizarla hacia abajo o al tocar fuera de ella.">
+
+            <Button
+                android:id="@+id/botonHoja"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Abrir hoja inferior" />
+
+            <TextView
+                android:id="@+id/respuestaHoja"
+                style="@style/TextoRespuesta"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Ninguna opción elegida." />
+        </com.gmail.juliocesar64914.interfazconviews.componentes.TarjetaDemo>
+
+        <!-- ========== 7. Tarjeta, separador y badge ========== -->
+        <com.gmail.juliocesar64914.interfazconviews.componentes.TarjetaDemo
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:nombre="Tarjeta, separador y distintivo (badge)"
+            app:descripcion="La tarjeta agrupa información relacionada. El separador divide contenido con una línea. El badge muestra un número o punto sobre un ícono para avisar novedades.">
+
+            <TextView
+                style="@style/TextoEtiqueta"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Tarjetas" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <com.google.android.material.card.MaterialCardView
+                    android:id="@+id/tarjetaRellena"
+                    style="@style/Widget.Material3.CardView.Filled"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:clickable="true"
+                    android:focusable="true">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:padding="12dp"
+                        android:text="Rellena" />
+                </com.google.android.material.card.MaterialCardView>
+
+                <com.google.android.material.card.MaterialCardView
+                    android:id="@+id/tarjetaElevada"
+                    style="@style/Widget.Material3.CardView.Elevated"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="8dp"
+                    android:layout_weight="1"
+                    android:clickable="true"
+                    android:focusable="true">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:padding="12dp"
+                        android:text="Elevada" />
+                </com.google.android.material.card.MaterialCardView>
+
+                <com.google.android.material.card.MaterialCardView
+                    android:id="@+id/tarjetaContorno"
+                    style="@style/Widget.Material3.CardView.Outlined"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="8dp"
+                    android:layout_weight="1"
+                    android:clickable="true"
+                    android:focusable="true">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:padding="12dp"
+                        android:text="Contorno" />
+                </com.google.android.material.card.MaterialCardView>
+            </LinearLayout>
+
+            <TextView
+                android:id="@+id/respuestaTarjetas"
+                style="@style/TextoRespuesta"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Tarjetas tocadas: 0" />
+
+            <com.google.android.material.divider.MaterialDivider
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
+
+            <TextView
+                style="@style/TextoEtiqueta"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Separador vertical" />
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="center_vertical"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Inicio" />
+
+                <View
+                    android:layout_width="1dp"
+                    android:layout_height="match_parent"
+                    android:layout_marginStart="12dp"
+                    android:layout_marginEnd="12dp"
+                    android:background="?attr/colorOutlineVariant" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Perfil" />
+
+                <View
+                    android:layout_width="1dp"
+                    android:layout_height="match_parent"
+                    android:layout_marginStart="12dp"
+                    android:layout_marginEnd="12dp"
+                    android:background="?attr/colorOutlineVariant" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Ajustes" />
+            </LinearLayout>
+
+            <com.google.android.material.divider.MaterialDivider
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
+
+            <TextView
+                style="@style/TextoEtiqueta"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Distintivos (badges)" />
+
+            <!-- Cada ícono va dentro de un FrameLayout para que el badge tenga espacio -->
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <FrameLayout
+                    android:id="@+id/marcoAvisos"
+                    android:layout_width="56dp"
+                    android:layout_height="56dp">
+
+                    <ImageView
+                        android:id="@+id/iconoAvisos"
+                        android:layout_width="24dp"
+                        android:layout_height="24dp"
+                        android:layout_gravity="center"
+                        android:contentDescription="Notificaciones"
+                        android:src="@drawable/ic_notifications" />
+                </FrameLayout>
+
+                <FrameLayout
+                    android:id="@+id/marcoCarrito"
+                    android:layout_width="56dp"
+                    android:layout_height="56dp"
+                    android:layout_marginStart="16dp">
+
+                    <ImageView
+                        android:id="@+id/iconoCarrito"
+                        android:layout_width="24dp"
+                        android:layout_height="24dp"
+                        android:layout_gravity="center"
+                        android:contentDescription="Carrito"
+                        android:src="@drawable/ic_shopping_cart" />
+                </FrameLayout>
+
+                <!-- Toca el sobre para marcar o desmarcar el correo como nuevo -->
+                <FrameLayout
+                    android:id="@+id/marcoCorreo"
+                    android:layout_width="56dp"
+                    android:layout_height="56dp"
+                    android:layout_marginStart="16dp"
+                    android:background="?attr/selectableItemBackgroundBorderless"
+                    android:clickable="true"
+                    android:focusable="true">
+
+                    <ImageView
+                        android:id="@+id/iconoCorreo"
+                        android:layout_width="24dp"
+                        android:layout_height="24dp"
+                        android:layout_gravity="center"
+                        android:contentDescription="Correo"
+                        android:src="@drawable/ic_email" />
+                </FrameLayout>
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <Button
+                    android:id="@+id/botonMasAviso"
+                    style="@style/Widget.Material3.Button.OutlinedButton"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="+ Aviso" />
+
+                <Button
+                    android:id="@+id/botonMasCarrito"
+                    style="@style/Widget.Material3.Button.OutlinedButton"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="8dp"
+                    android:text="+ Carrito" />
+
+                <Button
+                    android:id="@+id/botonLimpiar"
+                    style="@style/Widget.Material3.Button.TextButton"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="8dp"
+                    android:text="Limpiar" />
+            </LinearLayout>
+        </com.gmail.juliocesar64914.interfazconviews.componentes.TarjetaDemo>
+    </LinearLayout>
+</androidx.core.widget.NestedScrollView>
